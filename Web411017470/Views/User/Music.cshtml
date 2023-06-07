@@ -1,0 +1,38 @@
+﻿
+@{
+    ViewBag.Title = "Music";
+}
+
+<h2>音符查詢</h2>
+
+<form method="post">
+    
+    <div>
+        <label for="name">名稱:</label>
+        <input type="text" id="name" name="name" />
+    </div>
+    
+    <div>
+        <label for="number">數字:</label>
+        <input type="number" id="number" name="number" />
+    </div>
+    
+    
+    <div>
+        <button type="submit">送出</button>
+    </div>
+    
+    
+</form>
+
+@if (!string.IsNullOrEmpty(ViewBag.Name) && !string.IsNullOrEmpty(ViewBag.Note))
+{
+    查詢結果:
+    <p>hi,姓名: @ViewBag.Name,查詢音符為 : @ViewBag.Note</p>
+}
+
+@if (!string.IsNullOrEmpty(ViewBag.Error))
+{
+    查詢結果:
+    <p>hi,姓名: @ViewBag.Name,查詢音符為 : @ViewBag.Error</p>
+}
